@@ -6,9 +6,11 @@ The purpose of this shader collection is for each to be generally useful and eff
 ## Installation
 You can use DefFX in your own project by adding this project as a [Defold library dependency](http://www.defold.com/manuals/libraries/). Open your game.project file and in the dependencies field under project add:
 
-https://github.com/subsoap/deffx/archive/master.zip
+	https://github.com/subsoap/deffx/archive/master.zip
 
 Once installed, you can select the materials you wish to use from their associated folders much like you would builtin materials. When you make builds Defold will only package the materials you actually use so do not worry about the extra files. Check your build folder to see for yourself.
+
+Check the source files and examples for full usage.
 
 This collection will likely change over time though we'll try to not break any existing shaders. You may wish to download a static version of these files for use in your project, or create a fork of this project to link to within Defold. At some point, this project will have versioned releases which will be guaranteed to not change and will be easily linked to.
 
