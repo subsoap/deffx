@@ -1,0 +1,9 @@
+images {
+  image: "/examples/_assets/textures/defold/defold-icon.png"
+}
+images {
+  image: "/examples/_assets/textures/defold/defold-large.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0

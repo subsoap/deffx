@@ -1,0 +1,9 @@
+images {
+  image: "/examples/_assets/textures/public-domain/japan-nach-reisen-und-studien.png"
+}
+images {
+  image: "/examples/_assets/textures/public-domain/wild-turkey.png"
+}
+margin: 4
+extrude_borders: 0
+inner_padding: 4
