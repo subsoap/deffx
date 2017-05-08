@@ -20,6 +20,8 @@ Each shader has different potential usage. There are shaders which could be used
 ## Gotchas
 You may wish to adjust, or merge multiple shader files together for your projects to improve batching and lower draw calls and then make your single shader be able to do multiple effects or single effects at once based on variables sent to the shader programs.
 
+Be careful about breaking batching! If you have a ton of different sprites with various materials set to them at different z positions you may significantly lower your game's performance. This is why you should consider merging multiple shaders with the effects you want possible on your sprites into a single shader for your own use. The process of merging can be complex so ask on the Defold forum if you need assistance.
+
 Some of the examples may have extreme effects to illustrate the range of effects so if you are sensitive to light / have epilepsy be warned!
 
 ## Sprite Ready Shaders
