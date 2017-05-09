@@ -1,7 +1,7 @@
 # DefFX
 A collection of useful shader effects made ready to be used with the Defold game engine
 
-The purpose of this shader collection is for each to be generally useful and efficient. If you've made a shader which you think would be useful to others please consider contributing it via a pull request. If you can improve an existing shader to add useful features or increase performance please submit your changes!
+The purpose of this shader collection is for each to be generally useful, efficient, and to work on Open GL ES 2.0. If you've made a shader which you think would be useful to others please consider contributing it via a pull request. If you can improve an existing shader to add useful features or increase performance please submit your changes!
 
 ## Installation
 You can use DefFX in your own project by adding this project as a [Defold library dependency](http://www.defold.com/manuals/libraries/). Open your game.project file and in the dependencies field under project add:
