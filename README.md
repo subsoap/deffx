@@ -24,6 +24,10 @@ Be careful about breaking batching! If you have a ton of different sprites with 
 
 Some of the examples may have extreme effects to illustrate the range of effects so if you are sensitive to light / have epilepsy be warned!
 
+Sometimes it is better to make pre-baked raster images with some extra polish effects rather than using complex shaders. Performance matters a great deal on mobile and it's easy to kill it with complex shaders.
+
+You may want to add kill switches for certain targets to completely bypass the normal shader code for complex shaders, especially with low FPS. Or to give users config options.
+
 ## Sprite Ready Shaders
 These shaders can be added to sprites. You may need to send data to the shader program over time such as a timer value so check the associated demos for each.
 
