@@ -1,0 +1,17 @@
+uniform mediump mat4 view_proj;
+uniform mediump mat4 world;
+
+attribute mediump vec4 position;
+attribute mediump vec2 texcoord0;
+
+varying mediump vec2 var_texcoord0;
+varying mediump vec3 var_view_proj0;
+
+void main()
+{
+    gl_Position = view_proj * vec4(position.xyz, 1.0);
+    var_texcoord0 = texcoord0;
+    vec3 direction = vec3(0.0);
+	vec3 transformed_direction = vec3(view_proj * vec4(direction, 0.0));
+    var_view_proj0 = transformed_direction;
+}

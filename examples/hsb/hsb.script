@@ -3,6 +3,7 @@
 -- If brightness is 0 then it's full black, 1 is normal, 1+ extra bright
 -- default values are hue 0, saturation 1, brightness 1
 -- hsb.x = hue, hsb.y = saturation, hsb.z = brightness
+-- http://geraldbakker.nl/psnumbers/hsb-explained.html
 
 function init(self)
 	self.timer = 0

@@ -1,4 +1,4 @@
-name: "sprite"
+name: "hsb"
 tags: "tile"
 vertex_program: "/builtins/materials/sprite.vp"
 fragment_program: "/deffx/materials/sprite/hsb.fp"
