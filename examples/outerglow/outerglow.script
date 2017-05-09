@@ -1,0 +1,11 @@
+
+function init(self)
+	self.timer = 0
+end
+
+
+function update(self, dt)
+	self.timer = self.timer + dt
+
+end
+

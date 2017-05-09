@@ -1,0 +1,28 @@
+name: "sprite"
+tags: "tile"
+vertex_program: "/builtins/materials/sprite.vp"
+fragment_program: "/deffx/materials/sprite/outerglow.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+fragment_constants {
+  name: "rgba"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 156.0
+    y: 255.0
+    z: 255.0
+    w: 1.0
+  }
+}
+fragment_constants {
+  name: "options"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 25.0
+    y: 25.0
+    z: 0.0
+    w: 4.0
+  }
+}

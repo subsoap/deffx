@@ -1,0 +1,18 @@
+name: "hsb"
+tags: "tile"
+vertex_program: "/builtins/materials/sprite.vp"
+fragment_program: "/deffx/materials/sprite/dropshadow.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+fragment_constants {
+  name: "dropshadow"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 5.0
+    z: 5.0
+    w: 0.0
+  }
+}

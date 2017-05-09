@@ -1,0 +1,47 @@
+-- Trim / clip off areas of your sprites based on horizontal and vertical start/stop percentages 
+-- useful for example with decorated health
+-- really hacky right now because I don't know how to get relative texcoord0 of a texture in an atlas
+-- you must have only one texture in an atlas, and you must check to see the size of the atlas
+-- todo add vertical clip too
+
+local atlas_width = 512
+local atlas_height = 64
+local texture_width = 299
+local texture_height = 55
+local ratio_width = texture_width / atlas_width
+--ratio_width = 1 -- uncomment these to see what happens without the ratio correction
+
+function init(self)
+	go.set("/bars#bar_health", "ratio", vmath.vector4(ratio_width, 0, 0, 0))
+	go.set("/bars#bar_mana", "ratio", vmath.vector4(ratio_width, 0, 0, 0))
+	go.set("/bars#bar_health", "trim", vmath.vector4(0, 0.50, 0, 1)) -- should be cut at 50% with ratio correction
+	self.timer = 0
+end
+
+function final(self) 
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	self.timer = self.timer + dt
+	go.set("/bars#bar_health", "trim", vmath.vector4(math.abs(math.sin(self.timer * 0.32)), math.abs(math.sin(self.timer)), 0, 0))
+	go.set("/bars#bar_mana", "trim", vmath.vector4(0, (math.abs(math.sin(self.timer * 0.32))), 0, 0))
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end
