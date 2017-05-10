@@ -1,0 +1,36 @@
+function init(self)
+	self.timer = 0
+	self.pixelamount = 128
+	-- Add initialization code here
+	-- Remove this function if not needed
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	self.timer = self.timer + dt * 0.05
+	--local amount = math.floor(math.abs(math.sin(self.timer)) * self.pixelamount)
+	local amount = (math.abs(math.sin(self.timer)) * self.pixelamount)
+	go.set("/unitquad#unitquad", "options.x", amount)
+	
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	-- Add message-handling code here
+	-- Remove this function if not needed
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

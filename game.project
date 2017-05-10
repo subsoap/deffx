@@ -7,7 +7,7 @@ dependencies = https://github.com/subsoap/deffx/archive/master.zip
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_rendertarget/pixelate/pixelate.collectionc
+main_collection = /examples_postprocessing/scanlines/scanlines.collectionc
 render = /deffx/render/default.renderc
 
 [display]

@@ -1,0 +1,6 @@
+images {
+  image: "/examples_sprites/_assets/textures/outerglow/sample.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 32

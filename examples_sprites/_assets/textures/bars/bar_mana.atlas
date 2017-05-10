@@ -1,0 +1,6 @@
+images {
+  image: "/examples_sprites/_assets/textures/bars/decorated_mana.png"
+}
+margin: 4
+extrude_borders: 0
+inner_padding: 0
