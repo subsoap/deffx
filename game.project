@@ -1,7 +1,7 @@
 [project]
 title = DefFX
 version = 1.0
-dependencies = https://github.com/subsoap/deffx/archive/master.zip
+dependencies = 
 
 [input]
 game_binding = /input/game.input_bindingc
