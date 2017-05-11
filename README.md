@@ -49,5 +49,6 @@ These shaders are meant to be applied to render targets. Generally this means yo
 These shaders are meant for use in 3D models. They can be used as foundations for greater effects. These shaders require a render script which supports 3D models.
 
 * Phong
+![](docs/images/3d_phong.png)
 * Textured
 ![](docs/images/3d_textured.png)

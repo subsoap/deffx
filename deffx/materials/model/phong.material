@@ -20,7 +20,7 @@ vertex_constants {
   type: CONSTANT_TYPE_NORMAL
 }
 fragment_constants {
-  name: "light_position"
+  name: "lightPos4"
   type: CONSTANT_TYPE_USER
   value {
     x: 0.0

@@ -4,7 +4,7 @@ embedded_instances {
   id: "go"
   data: "components {\n"
   "  id: \"script\"\n"
-  "  component: \"/examples_3d/phong/phong.script\"\n"
+  "  component: \"/examples_3d/textured/textured.script\"\n"
   "  position {\n"
   "    x: 0.0\n"
   "    y: 0.0\n"
@@ -21,7 +21,7 @@ embedded_instances {
   "  id: \"model\"\n"
   "  type: \"model\"\n"
   "  data: \"mesh: \\\"/_assets/models/rock01.dae\\\"\\n"
-  "material: \\\"/deffx/materials/model/phong.material\\\"\\n"
+  "material: \\\"/deffx/materials/model/textured.material\\\"\\n"
   "textures: \\\"/_assets/textures/public-domain/wild-turkey.png\\\"\\n"
   "skeleton: \\\"\\\"\\n"
   "animations: \\\"\\\"\\n"
@@ -55,26 +55,6 @@ embedded_instances {
   scale3 {
     x: 0.5449717
     y: 0.5594787
-    z: 1.0
-  }
-}
-embedded_instances {
-  id: "script"
-  data: ""
-  position {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 1.0
-    y: 1.0
     z: 1.0
   }
 }
@@ -118,7 +98,7 @@ embedded_instances {
   "pivot: PIVOT_NW\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"3d: Phong\\\"\\n"
+  "text: \\\"3d: Textured\\\"\\n"
   "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
@@ -172,7 +152,7 @@ embedded_instances {
   "pivot: PIVOT_NW\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"3d: Phong\\\"\\n"
+  "text: \\\"3d: Textured\\\"\\n"
   "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
   "material: \\\"/builtins/fonts/font.material\\\"\\n"
   "\"\n"

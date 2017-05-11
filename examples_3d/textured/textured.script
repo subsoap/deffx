@@ -1,16 +1,10 @@
 function init(self)
 	-- Register this game object on the input stack so we get user input
 	msg.post(".", "acquire_input_focus")
-	self.timer = 0
 end
 
-function update(self, dt)
+function update(self,dt)
 
-		self.timer = self.timer + dt
-		self.delta = math.cos(self.timer)
-		go.set("/go#model", "lightPos4.x", self.delta)
-		go.set("/go#model", "lightPos4.y", self.delta)
-		go.set("/go#model", "lightPos4.z", self.delta)
 end
 
 function on_input(self, action_id, action)
@@ -34,6 +28,6 @@ function on_input(self, action_id, action)
 		
 		-- Set the tint shader constant according to the
 		-- interaction position.
-		--go.set("/go#model", "tint", vmath.vector4(1 / width * (width - x), 1 / height * y, 1, 1))
+		go.set("/go#model", "tint", vmath.vector4(1 / width * (width - x), 1 / height * y, 1, 1))
 	end
 end
