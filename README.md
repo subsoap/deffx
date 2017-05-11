@@ -34,8 +34,11 @@ For post processing effects, they can be very expensive for mobile, such as blur
 These shaders can be added to sprites. You may need to send data to the shader program over time such as a timer value so check the associated demos for each.
 
 * HSB - Adjust the Hue, Saturation, and Brightness of sprites at runtime.
+
 ![](docs/images/sprite_hsb.png)
+
 * Scrolling Texture - Offset / pan / zoom seamless textures.
+
 ![](docs/images/sprite_scrolling_texture.png)
 
 
@@ -43,12 +46,16 @@ These shaders can be added to sprites. You may need to send data to the shader p
 These shaders are meant to be applied to render targets. Generally this means you draw your game layers to the render target, and then apply the post processing shader effect. Using these effects requires a custom render script. These shaders require a render script set which has a render target setup.
 
 * Scanlines + Chromatic Shift + Distortion + Vignetting
+
 ![](docs/images/postprocessing_scanlines_chromatic_distortion_vignette.png)
 
 ## 3D Model Shaders
 These shaders are meant for use in 3D models. They can be used as foundations for greater effects. These shaders require a render script which supports 3D models.
 
 * Phong
+
 ![](docs/images/3d_phong.png)
+
 * Textured
+
 ![](docs/images/3d_textured.png)
