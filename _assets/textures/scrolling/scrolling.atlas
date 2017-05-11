@@ -1,0 +1,6 @@
+images {
+  image: "/_assets/textures/scrolling/1.png"
+}
+margin: 0
+extrude_borders: 0
+inner_padding: 0
