@@ -32,6 +32,10 @@ You may want to add kill switches for certain targets to completely bypass the n
 These shaders can be added to sprites. You may need to send data to the shader program over time such as a timer value so check the associated demos for each.
 
 * HSB - Adjust the Hue, Saturation, and Brightness of sprites at runtime.
+![](docs/images/hsb.png)
+* Scrolling Texture - Offset / pan / zoom seamless textures.
+![](docs/images/sprite_scrolling_texture.png)
+
 
 ## Post Processing Effect Shaders
 These shaders are meant to be applied to render targets. Generally this means you draw your game layers to the render target, and then apply the post processing shader effect. Using these effects requires a custom render script.
