@@ -38,4 +38,7 @@ These shaders can be added to sprites. You may need to send data to the shader p
 
 
 ## Post Processing Effect Shaders
-These shaders are meant to be applied to render targets. Generally this means you draw your game layers to the render target, and then apply the post processing shader effect. Using these effects requires a custom render script.
+These shaders are meant to be applied to render targets. Generally this means you draw your game layers to the render target, and then apply the post processing shader effect. Using these effects requires a custom render script. These shaders require a render script set which has a render target setup.
+
+## 3D Model Shaders
+These shaders are meant for use in 3D models. They can be used as foundations for greater effects. These shaders require a render script which supports 3D models.
