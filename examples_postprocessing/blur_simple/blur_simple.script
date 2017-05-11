@@ -1,0 +1,21 @@
+function init(self)
+	self.timer = 0
+	self.delta = 0
+	--go.set("/unitquad#unitquad", "options.y", 0.09) -- adjust opactity of noise layer added
+end
+
+
+
+function update(self, dt)
+	--self.timer = math.fmod(self.timer + dt *10, 10)
+	self.timer = self.timer + dt
+	self.delta = math.abs(math.sin(self.timer)) * 4
+	go.set("/unitquad#unitquad", "delta.x", self.delta)
+	--go.set("/unitquad#unitquad", "time.x", self.timer)
+	
+	--local amount = math.floor(math.abs(math.sin(self.timer)) * self.pixelamount)
+	--local amount = (math.abs(math.sin(self.timer)) * self.pixelamount)
+	--go.set("/unitquad#unitquad", "options.x", amount)
+	
+
+end

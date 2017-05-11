@@ -7,7 +7,7 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_postprocessing/noise/noise.collectionc
+main_collection = /examples_postprocessing/blur_simple/blur_simple.collectionc
 render = /deffx/render/default.renderc
 
 [display]
