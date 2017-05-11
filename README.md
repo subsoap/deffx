@@ -28,6 +28,8 @@ Sometimes it is better to make pre-baked raster images with some extra polish ef
 
 You may want to add kill switches for certain targets to completely bypass the normal shader code for complex shaders, especially with low FPS. Or to give users config options.
 
+For post processing effects, they can be very expensive for mobile, such as blurs. It would be a good idea to scale down the size of the rendered texture which is then blurred for example. You could example more expensive shaders on desktop targets while enabling less expensive versions for mobile.
+
 ## Sprite Ready Shaders
 These shaders can be added to sprites. You may need to send data to the shader program over time such as a timer value so check the associated demos for each.
 
@@ -40,5 +42,12 @@ These shaders can be added to sprites. You may need to send data to the shader p
 ## Post Processing Effect Shaders
 These shaders are meant to be applied to render targets. Generally this means you draw your game layers to the render target, and then apply the post processing shader effect. Using these effects requires a custom render script. These shaders require a render script set which has a render target setup.
 
+* Scanlines + Chromatic Shift + Distortion + Vignetting
+![](docs/images/postprocessing_scanlines_chromatic_distortion_vignette.png)
+
 ## 3D Model Shaders
 These shaders are meant for use in 3D models. They can be used as foundations for greater effects. These shaders require a render script which supports 3D models.
+
+* Phong
+* Textured
+![](docs/images/3d_textured.png)

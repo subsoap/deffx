@@ -7,8 +7,8 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_sprites/scrolling_texture/scrolling_texture.collectionc
-render = /builtins/render/default.renderc
+main_collection = /examples_3d/phong/phong.collectionc
+render = /deffx/render/3d/main.renderc
 
 [display]
 width = 1600
