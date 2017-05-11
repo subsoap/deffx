@@ -238,3 +238,46 @@ embedded_instances {
     z: 1.0
   }
 }
+embedded_instances {
+  id: "unitquad"
+  data: "embedded_components {\n"
+  "  id: \"unitquad\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/deffx/quad/quad.dae\\\"\\n"
+  "material: \\\"/deffx/materials/sprite/scrolling.material\\\"\\n"
+  "textures: \\\"/_assets/textures/scrolling/1.png\\\"\\n"
+  "skeleton: \\\"\\\"\\n"
+  "animations: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "name: \\\"\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 785.316
+    y: 407.309
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 959.60297
+    y: 477.77905
+    z: 1.0
+  }
+}

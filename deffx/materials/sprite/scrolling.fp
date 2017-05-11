@@ -5,6 +5,7 @@ uniform lowp vec4 tint;
 uniform lowp vec4 offset;
 uniform lowp vec4 timer;
 
+
 void main()
 {
     vec2 q = var_texcoord0.xy * 5; // should account for w/h scale
