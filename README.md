@@ -45,6 +45,10 @@ These shaders can be added to sprites. You may need to send data to the shader p
 
 ![](docs/images/sprite_greyscale.png)
 
+* Lighten - useful for making sprites flash when taking damage for example.
+
+![](docs/images/sprite_lighten.png)
+
 * Noise
 * Simple Blur
 * Directional Blur
@@ -65,7 +69,7 @@ These shaders are meant for use in 3D models. They can be used as foundations fo
 
 ![](docs/images/3d_phong.png)
 
-* Textured
+* Textured (unlit / no shading)
 
 ![](docs/images/3d_textured.png)
 

@@ -1,0 +1,22 @@
+-- Can be used to make objects flash when they take damage for example
+-- You can also apply a tint after making an object brighter to colorize its flash
+
+function init(self)
+	self.timer = 0
+	-- Add initialization code here
+	-- Remove this function if not needed
+	
+end
+
+function update(self, dt)
+	self.timer = self.timer + dt * 0.5
+	local offset = math.fmod(self.timer, 4)
+
+	go.set("/public#turkey", "options.x", math.max(math.sin(self.timer * 1), 0.1) + math.max(math.sin(self.timer * 10), 0.1))
+	go.set("/public#japan", "options.x", offset)
+	go.set("/defold#large", "options.x", offset)
+	go.set("/defold#small", "options.x", 0.1)
+
+	-- Add update code here
+	-- Remove this function if not needed
+end

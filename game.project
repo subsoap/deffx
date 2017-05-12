@@ -7,7 +7,7 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_sprites/greyscale/greyscale.collectionc
+main_collection = /examples_sprites/lighten/lighten.collectionc
 render = /builtins/render/default.renderc
 
 [display]
