@@ -13,7 +13,7 @@ fragment_constants {
     x: 1.0
     y: 1.0
     z: 1.0
-    w: 0.25
+    w: 1.0
   }
 }
 fragment_constants {
