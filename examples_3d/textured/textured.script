@@ -5,8 +5,10 @@ function init(self)
 end
 
 function update(self,dt)
-	self.timer = self.timer + dt
+	self.timer = self.timer + dt * 0.1
 	go.set("/go#model", "tint", vmath.vector4(math.sin(self.timer) + 1, math.cos(self.timer) + 1, math.sin(math.cos(self.timer)) + 1, 1))
+	--go.set("/go#model", "timer.x", self.timer)
+	go.set_position(vmath.vector3(0,0,math.abs(math.sin(self.timer)) * -1))
 end
 
 function on_input(self, action_id, action)
