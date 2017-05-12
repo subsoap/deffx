@@ -203,7 +203,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/_assets/models/openbox.dae\\\"\\n"
+  "  data: \"mesh: \\\"/_assets/models/kocmoc.dae\\\"\\n"
   "material: \\\"/deffx/materials/model/checker.material\\\"\\n"
   "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
   "skeleton: \\\"\\\"\\n"
@@ -236,8 +236,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.5
-    y: 0.5
-    z: 0.5
+    x: 0.25
+    y: 0.25
+    z: 0.25
   }
 }
