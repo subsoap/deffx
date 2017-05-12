@@ -59,3 +59,7 @@ These shaders are meant for use in 3D models. They can be used as foundations fo
 * Textured
 
 ![](docs/images/3d_textured.png)
+
+* Checkers
+
+![](docs/images/3d_checkers.png)

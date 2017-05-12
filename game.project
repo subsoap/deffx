@@ -7,7 +7,7 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_3d/phong/phong.collectionc
+main_collection = /examples_3d/checker/checker.collectionc
 render = /deffx/render/3d/main.renderc
 
 [display]
