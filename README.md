@@ -76,3 +76,10 @@ These shaders are meant for use in 3D models. They can be used as foundations fo
 * Checkers
 
 ![](docs/images/3d_checkers.png)
+
+## Blending Shaders
+Use image editing blending modes between two textures. Could be used for example as additional render target steps to apply textures to entire screen in some way.
+
+* Vivid Light
+
+![](docs/images/blend_vivid_light.png)

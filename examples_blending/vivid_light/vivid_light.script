@@ -10,9 +10,9 @@ end
 function update(self, dt)
 	self.timer = self.timer + dt
 	self.offset = (math.sin(self.timer))
-	--go.set("/go#sprite", "offset.x", self.offset + math.cos(self.timer * 1.2))
-	--go.set("/go#sprite", "offset.y", self.offset + math.cos(self.timer * 0.4))
-	--go.set("/go#sprite", "timer.x", self.timer)
+	go.set("/go#sprite", "offset.x", self.offset + math.cos(self.timer * 1.2))
+	go.set("/go#sprite", "offset.y", self.offset + math.cos(self.timer * 0.4))
+	go.set("/go#sprite", "timer.x", self.timer)
 	
 	--local amount = math.floor(math.abs(math.sin(self.timer)) * self.pixelamount)
 	--local amount = (math.abs(math.sin(self.timer)) * self.pixelamount)
