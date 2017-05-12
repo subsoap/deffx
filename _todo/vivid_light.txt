@@ -1,2 +1,0 @@
-Vivid light blending has issues with trasparency of blend not being applied correctly. See vivid_light.jpg for way it should look.
-There is an imperfect solution in shader but a proper solution should be done by someone smart eventually.
