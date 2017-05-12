@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+    <asset>
+        <contributor>
+            <author>Simon</author>
+            <authoring_tool>CG1LAB_FRAMEWORK</authoring_tool>
+        </contributor>
+        <created>2011-01-05T13:53:28.505+01:00</created>
+        <modified>2011-01-05T13:53:28.505+01:00</modified>
+        <title>CG1 Lab Framework Scene.</title>
+        <unit name="meter" meter="1.0"/>
+        <up_axis>Z_UP</up_axis>
+    </asset>
+    <library_lights>
+        <light name="AmbientLight" id="AmbientLight">
+            <technique_common>
+                <ambient>
+                    <color>0.25779014825820923 0.25779014825820923 0.25779014825820923</color>
+                </ambient>
+            </technique_common>
+        </light>
+        <light name="DefaultLight" id="DefaultLight">
+            <technique_common>
+                <directional>
+                    <color>1.0 1.0 1.0</color>
+                </directional>
+            </technique_common>
+        </light>
+    </library_lights>
+    <library_cameras>
+        <camera name="DefaultCamera" id="DefaultCamera">
+            <optics>
+                <technique_common>
+                    <perspective>
+                        <yfov>45.0</yfov>
+                        <aspect_ratio>1.0</aspect_ratio>
+                        <znear>0.10000000149011612</znear>
+                        <zfar>100.0</zfar>
+                    </perspective>
+                </technique_common>
+            </optics>
+        </camera>
+    </library_cameras>
+    <library_geometries>
+        <geometry name="pyramid" id="pyramid">
+            <mesh>
+                <source id="pyramid-positions">
+                    <float_array count="15" id="pyramid-positions-array">0.0 0.7071067690849304 -0.3535533845424652 0.7071067690849304 0.0 -0.3535533845424652 0.0 -0.7071067690849304 -0.3535533845424652 -0.7071067690849304 0.0 -0.3535533845424652 0.0 0.0 0.3535533845424652</float_array>
+                    <technique_common>
+                        <accessor stride="3" source="#pyramid-positions-array" count="5">
+                            <param type="float" name="X"/>
+                            <param type="float" name="Y"/>
+                            <param type="float" name="Z"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="pyramid-normals">
+                    <float_array count="15" id="pyramid-normals-array">0.0 0.0 -0.9999999403953552 -0.5773501992225647 0.5773503184318542 0.5773502588272095 -0.5773502588272095 -0.5773501992225647 0.5773501992225647 0.5773502588272095 -0.5773502588272095 0.5773502588272095 0.5773502588272095 0.5773501992225647 0.5773502588272095</float_array>
+                    <technique_common>
+                        <accessor stride="3" source="#pyramid-normals-array" count="5">
+                            <param type="float" name="X"/>
+                            <param type="float" name="Y"/>
+                            <param type="float" name="Z"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="pyramid-colors">
+                    <float_array count="4" id="pyramid-colors-array">1.0 1.0 1.0 1.0</float_array>
+                    <technique_common>
+                        <accessor stride="4" source="#pyramid-colors-array" count="1">
+                            <param type="float" name="R"/>
+                            <param type="float" name="G"/>
+                            <param type="float" name="B"/>
+                            <param type="float" name="A"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="pyramid-vertices">
+                    <input source="#pyramid-positions" semantic="POSITION"/>
+                </vertices>
+                <polylist material="pyramid-material-symbol" count="5" name="pyramid">
+                    <input source="#pyramid-vertices" semantic="VERTEX" offset="0"/>
+                    <input source="#pyramid-normals" semantic="NORMAL" offset="1"/>
+                    <input source="#pyramid-colors" semantic="COLOR" offset="2"/>
+                    <vcount>4 3 3 3 3</vcount>
+                    <p>0 0 0 1 0 0 2 0 0 3 0 0 0 1 0 3 1 0 4 1 0 3 2 0 2 2 0 4 2 0 2 3 0 1 3 0 4 3 0 1 4 0 0 4 0 4 4 0</p>
+                </polylist>
+            </mesh>
+        </geometry>
+        <geometry name="cube" id="cube">
+            <mesh>
+                <source id="cube-positions">
+                    <float_array count="24" id="cube-positions-array">-1.0 -1.0 1.0 1.0 -1.0 1.0 1.0 1.0 1.0 -1.0 1.0 1.0 1.0 1.0 -1.0 -1.0 1.0 -1.0 1.0 -1.0 -1.0 -1.0 -1.0 -1.0</float_array>
+                    <technique_common>
+                        <accessor stride="3" source="#cube-positions-array" count="8">
+                            <param type="float" name="X"/>
+                            <param type="float" name="Y"/>
+                            <param type="float" name="Z"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="cube-normals">
+                    <float_array count="18" id="cube-normals-array">0.0 0.0 1.0 0.0 1.0 0.0 1.0 0.0 0.0 0.0 0.0 -1.0 0.0 -1.0 0.0 -1.0 0.0 0.0</float_array>
+                    <technique_common>
+                        <accessor stride="3" source="#cube-normals-array" count="6">
+                            <param type="float" name="X"/>
+                            <param type="float" name="Y"/>
+                            <param type="float" name="Z"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <source id="cube-colors">
+                    <float_array count="4" id="cube-colors-array">1.0 1.0 1.0 1.0</float_array>
+                    <technique_common>
+                        <accessor stride="4" source="#cube-colors-array" count="1">
+                            <param type="float" name="R"/>
+                            <param type="float" name="G"/>
+                            <param type="float" name="B"/>
+                            <param type="float" name="A"/>
+                        </accessor>
+                    </technique_common>
+                </source>
+                <vertices id="cube-vertices">
+                    <input source="#cube-positions" semantic="POSITION"/>
+                </vertices>
+                <polylist material="cube-material-symbol" count="6" name="cube">
+                    <input source="#cube-vertices" semantic="VERTEX" offset="0"/>
+                    <input source="#cube-normals" semantic="NORMAL" offset="1"/>
+                    <input source="#cube-colors" semantic="COLOR" offset="2"/>
+                    <vcount>4 4 4 4 4 4</vcount>
+                    <p>0 0 0 1 0 0 2 0 0 3 0 0 3 1 0 2 1 0 4 1 0 5 1 0 1 2 0 6 2 0 4 2 0 2 2 0 7 3 0 5 3 0 4 3 0 6 3 0 0 4 0 7 4 0 6 4 0 1 4 0 7 5 0 0 5 0 3 5 0 5 5 0</p>
+                </polylist>
+            </mesh>
+        </geometry>
+    </library_geometries>
+    <library_materials>
+        <material name="pyramid-material" id="pyramid-material">
+            <instance_effect url="#pyramid-effect"/>
+        </material>
+        <material name="cube-material" id="cube-material">
+            <instance_effect url="#cube-effect"/>
+        </material>
+    </library_materials>
+    <library_effects>
+        <effect name="pyramid-effect" id="pyramid-effect">
+            <profile_COMMON>
+                <technique sid="common">
+                    <lambert>
+                        <ambient>
+                            <color>1.4934778213500977 1.4934778213500977 1.4934778213500977 1.0</color>
+                        </ambient>
+                        <diffuse>
+                            <color>0.4000000059604645 0.4000000059604645 0.4000000059604645 1.0</color>
+                        </diffuse>
+                    </lambert>
+                </technique>
+            </profile_COMMON>
+        </effect>
+        <effect name="cube-effect" id="cube-effect">
+            <profile_COMMON>
+                <technique sid="common">
+                    <lambert>
+                        <ambient>
+                            <color>0.1332085132598877 0.1332085132598877 0.1332085132598877 1.0</color>
+                        </ambient>
+                        <diffuse>
+                            <color>1.0 1.0 1.0 1.0</color>
+                        </diffuse>
+                    </lambert>
+                </technique>
+            </profile_COMMON>
+        </effect>
+    </library_effects>
+    <library_visual_scenes>
+        <visual_scene name="CG1LABScene" id="CG1LABScene">
+            <node name="AmbientLight">
+                <matrix>1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</matrix>
+                <instance_light url="#AmbientLight">
+                    <extra>
+                        <technique profile="CG1LAB">
+                            <enabled xmlns:ns2="http://www.collada.org/2005/11/COLLADASchema" xmlns="">true</enabled>
+                        </technique>
+                    </extra>
+                </instance_light>
+            </node>
+            <node name="pyramid">
+                <matrix>1.7189826965332031 0.0 0.0 -2.7397139072418213 0.0 1.7189826965332031 0.0 0.0 0.0 0.0 1.7189826965332031 0.0 0.0 0.0 0.0 1.0</matrix>
+                <instance_geometry url="#pyramid">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material target="#pyramid-material" symbol="pyramid-material-symbol"/>
+                        </technique_common>
+                        <extra>
+                            <technique profile="CG1LAB">
+<surface_shader_type xmlns:ns2="http://www.collada.org/2005/11/COLLADASchema" xmlns="">GOURAUD</surface_shader_type>
+                            </technique>
+                        </extra>
+                    </bind_material>
+                    <extra>
+                        <technique profile="CG1LAB">
+                            <enabled xmlns:ns2="http://www.collada.org/2005/11/COLLADASchema" xmlns="">true</enabled>
+                        </technique>
+                    </extra>
+                </instance_geometry>
+            </node>
+            <node name="DefaultLight">
+                <matrix>0.7071067690849304 -0.7071067690849304 0.0 0.0 0.4999999701976776 0.4999999701976776 -0.7071067690849304 0.0 0.4999999701976776 0.4999999701976776 0.7071067690849304 0.0 0.0 0.0 0.0 1.0</matrix>
+                <instance_light url="#DefaultLight">
+                    <extra>
+                        <technique profile="CG1LAB">
+                            <enabled xmlns:ns2="http://www.collada.org/2005/11/COLLADASchema" xmlns="">true</enabled>
+                        </technique>
+                    </extra>
+                </instance_light>
+            </node>
+            <node name="cube">
+                <matrix>1.0 0.0 0.0 2.4023637771606445 0.0 1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0</matrix>
+                <instance_geometry url="#cube">
+                    <bind_material>
+                        <technique_common>
+                            <instance_material target="#cube-material" symbol="cube-material-symbol"/>
+                        </technique_common>
+                        <extra>
+                            <technique profile="CG1LAB">
+<surface_shader_type xmlns:ns2="http://www.collada.org/2005/11/COLLADASchema" xmlns="">GOURAUD</surface_shader_type>
+                            </technique>
+                        </extra>
+                    </bind_material>
+                    <extra>
+                        <technique profile="CG1LAB">
+                            <enabled xmlns:ns2="http://www.collada.org/2005/11/COLLADASchema" xmlns="">true</enabled>
+                        </technique>
+                    </extra>
+                </instance_geometry>
+            </node>
+            <node name="DefaultCamera">
+                <matrix>-0.9993689656257629 -0.007352057378739119 0.034749969840049744 0.3474987745285034 0.03551919385790825 -0.20685766637325287 0.9777260422706604 9.77725887298584 0.0 0.9783434271812439 0.20698828995227814 2.069883108139038 0.0 0.0 0.0 1.0</matrix>
+                <instance_camera url="#DefaultCamera"/>
+            </node>
+            <evaluate_scene>
+                <render camera_node="#DefaultCamera"/>
+            </evaluate_scene>
+        </visual_scene>
+    </library_visual_scenes>
+    <scene>
+        <instance_visual_scene url="#CG1LABScene"/>
+    </scene>
+    <extra>
+        <technique profile="CG1LAB">
+            <modified xmlns:ns2="http://www.collada.org/2005/11/COLLADASchema" xmlns="">2011-01-05T13:53:28.505+01:00</modified>
+        </technique>
+    </extra>
+</COLLADA>

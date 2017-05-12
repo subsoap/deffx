@@ -1,8 +1,8 @@
-name: "phong"
+name: "normal"
 tags: "model"
 tags: "3d"
-vertex_program: "/deffx/materials/model/phong.vp"
-fragment_program: "/deffx/materials/model/phong.fp"
+vertex_program: "/deffx/materials/_tools/normal.vp"
+fragment_program: "/deffx/materials/_tools/normal.fp"
 vertex_constants {
   name: "view_proj"
   type: CONSTANT_TYPE_VIEWPROJ
@@ -43,6 +43,6 @@ samplers {
   name: "DIFFUSE_TEXTURE"
   wrap_u: WRAP_MODE_REPEAT
   wrap_v: WRAP_MODE_REPEAT
-  filter_min: FILTER_MODE_MIN_LINEAR
-  filter_mag: FILTER_MODE_MAG_LINEAR
+  filter_min: FILTER_MODE_MIN_NEAREST
+  filter_mag: FILTER_MODE_MAG_NEAREST
 }

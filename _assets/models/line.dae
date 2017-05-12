@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<COLLADA xmlns="http://www.collada.org/2008/03/COLLADASchema" version="1.5.0">
+  <asset>
+     <contributor>
+  
+     <author>Alan Hudson</author>
+     <authoring_tool>Handwritten</authoring_tool>
+     <copyright>
+        
+        
+        # Copyright (c) 2012 The Khronos Group Inc.
+# Permission is hereby granted, free of charge, to any person obtaining a copy of this software and /or associated documentation files (the "Materials "), to deal in the Materials without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Materials, and to permit persons to whom the Materials are furnished to do so, subject to
+# the following conditions:
+# The above copyright notice and this permission notice shall be included 
+# in all copies or substantial portions of the Materials. 
+# THE MATERIALS ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE MATERIALS OR THE USE OR OTHER DEALINGS IN THE MATERIALS.
+    </copyright>
+    </contributor>  
+    <created>2007-09-12T12:00:00</created>
+    <modified>2007-09-12T12:00:00</modified>
+    <subject>Test of line curve support</subject>    
+    <title>0712</title>    
+  </asset>
+  <library_geometries id="ring.BREP.lib">
+    <geometry id="ring.BREP.lib.geo">
+      <brep>
+
+<!-- Defining all the curves -->
+
+        <curves>
+          <curve sid="curve-1">
+            <line>
+              <origin>7 -1.22461e-015 0</origin>
+              <direction>0 0 1</direction>
+            </line>
+          </curve>
+        </curves>
+
+<!-- Defining all the curves on surfaces -->
+
+<!-- Defining all the surfaces -->
+
+<!-- The source for the positions -->
+
+        <source id="ring.brep.lib.geo.brep.geom-points">
+          <float_array count="6" id="ring.brep.lib.geo.brep.geom-points-array">
+7 -1.22461e-015 0
+7 -1.22461e-015 10
+</float_array>
+          <technique_common>
+            <accessor source="#ring.brep.lib.geo.brep.geompoints- array" stride="3" count="4" offset="0">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+
+<!-- The source for referencing the curves -->
+
+        <source id="ring.brep.lib.geo.brep.geom-curves">
+          <SIDREF_array count="6" id="ring.brep.lib.geo.brep.geom-curves-array">ring.BREP.lib.geo/curve-1</SIDREF_array>
+        </source>
+
+<!-- The source for the possible orientations -->
+
+        <source id="ring.brep.lib.geo.brep.orientations">
+          <Name_array count="2" id="ring.brep.lib.geo.brep.orientations-array">REVERSED FORWARD</Name_array>
+          <technique_common>
+            <accessor source="#ring.brep.lib.geo.brep.orientations-array" stride="1" count="2" offset="0">
+              <param name="ORIENTATION" type="Name"/>
+            </accessor>
+          </technique_common>
+        </source>
+
+<!-- This source contains the parameters of the curves for the edges -->
+
+        <source id="ring.brep.lib.geo.brep.curve-params">
+          <float_array count="2" id="ring.brep.lib.geo.brep.curve-params-array">
+0 10
+</float_array>
+          <technique_common>
+            <accessor source="#ring.brep.lib.geo.brep.curve-params-array" stride="2" count="1" offset="0">
+              <param name="START" type="float"/>
+              <param name="END" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+
+<!-- The vertices -->
+
+        <vertices id="ring.brep.lib.geo.brep.vertices">
+          <input source="#ring.brep.lib.geo.brep.geompoints" semantic="POSITION"/>
+        </vertices>
+
+<!-- The edges -->
+
+        <edges count="1" id="ring.brep.lib.geo.brep.edges">
+          <input source="#ring.brep.lib.geo.brep.geom-curves" semantic="CURVE" offset="0"/>
+          <input source="#ring.brep.lib.geo.brep.vertices" semantic="VERTEX" offset="1"/>
+          <input source="#ring.brep.lib.geo.brep.vertices" semantic="VERTEX" offset="2"/>
+          <input source="#ring.brep.lib.geo.brep.curve-params" semantic="PARAM" offset="3"/>
+          <p>
+0 0 1 0
+</p>
+        </edges>
+
+      </brep>
+    </geometry>
+  </library_geometries>
+
+<!-- Defining an effect -->
+
+  <library_effects>
+    <effect id="whitePhong">
+      <profile_COMMON>
+        <technique sid="phong1">
+          <phong>
+            <emission>
+              <color>1.0 1.0 1.0 1.0</color>
+            </emission>
+            <ambient>
+              <color>1.0 1.0 1.0 1.0</color>
+            </ambient>
+            <diffuse>
+              <color>1.0 1.0 1.0 1.0</color>
+            </diffuse>
+            <specular>
+              <color>1.0 1.0 1.0 1.0</color>
+            </specular>
+            <shininess>
+              <float>20.0</float>
+            </shininess>
+            <reflective>
+              <color>1.0 1.0 1.0 1.0</color>
+            </reflective>
+            <reflectivity>
+              <float>0.5</float>
+            </reflectivity>
+            <transparent>
+              <color>1.0 1.0 1.0 1.0</color>
+            </transparent>
+            <transparency>
+              <float>1.0</float>
+            </transparency>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+
+<!-- Defining a material -->
+
+  <library_materials>
+    <material id="whiteMaterial">
+      <instance_effect url="#whitePhong"/>
+    </material>
+  </library_materials>
+
+<!-- Instantiating the geometry in a visual scene -->
+
+  <library_visual_scenes>
+    <visual_scene id="DefaultScene">
+      <node name="Ring" id="Ring">
+        <translate>0 0 0</translate>
+        <rotate>0 0 1 0</rotate>
+        <rotate>0 1 0 0</rotate>
+        <rotate>1 0 0 0</rotate>
+        <scale>1 1 1</scale>
+        <instance_geometry url="#ring.BREP.lib.geo">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="WHITE" target="#whiteMaterial"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#DefaultScene"/>
+  </scene>
+</COLLADA>
