@@ -82,4 +82,4 @@ Use image editing blending modes between two textures. Could be used for example
 
 * Vivid Light
 
-![](docs/images/blend_vivid_light.png)
+![](docs/images/blending_vivid_light.png)
