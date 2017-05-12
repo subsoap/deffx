@@ -41,6 +41,15 @@ These shaders can be added to sprites. You may need to send data to the shader p
 
 ![](docs/images/sprite_scrolling_texture.png)
 
+* Greyscale
+
+![](docs/images/sprite_greyscale.png)
+
+* Noise
+* Simple Blur
+* Directional Blur
+* Pixelate
+
 
 ## Post Processing Effect Shaders
 These shaders are meant to be applied to render targets. Generally this means you draw your game layers to the render target, and then apply the post processing shader effect. Using these effects requires a custom render script. These shaders require a render script set which has a render target setup.
