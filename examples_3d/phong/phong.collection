@@ -22,7 +22,7 @@ embedded_instances {
   "  type: \"model\"\n"
   "  data: \"mesh: \\\"/_assets/models/rock01.dae\\\"\\n"
   "material: \\\"/deffx/materials/model/phong.material\\\"\\n"
-  "textures: \\\"/_assets/textures/public-domain/wild-turkey.png\\\"\\n"
+  "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
   "skeleton: \\\"\\\"\\n"
   "animations: \\\"\\\"\\n"
   "default_animation: \\\"\\\"\\n"
