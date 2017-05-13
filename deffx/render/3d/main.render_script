@@ -1,4 +1,4 @@
-
+screen_window_helper = require("deffx.utils.screen_window_helper")
 
 function init(self)
 
@@ -14,7 +14,7 @@ function init(self)
     self.clear_color.z = sys.get_config("render.clear_color_blue", 0)
     self.clear_color.w = sys.get_config("render.clear_color_alpha", 0)    
     
-    
+    self.timer = 0
     
     
     
@@ -22,7 +22,9 @@ end
 
 local screen_window_helper = require("deffx.utils.screen_window_helper")
 
-function update(self, dt)
+function update(self)
+	
+	self.timer = self.timer + 0.01
 
 	screen_window_helper.window_width = render.get_window_width()
 	screen_window_helper.window_height = render.get_window_height()
@@ -38,7 +40,7 @@ function update(self, dt)
     
     -- create view and projection matrices
     local cam_lookat = vmath.vector3(0.0,0.0,0.0)
-    local cam_pos = vmath.vector3(0.0,0.0,1.0)
+    local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)))
     --local cam_pos = vmath.vector3(0.0,0.0,20.0) -- this moves the camera further away
     local cam_up = vmath.vector3(0,1,0)
     local view_mtx = vmath.matrix4_look_at(cam_pos, cam_lookat, cam_up)
