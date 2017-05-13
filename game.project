@@ -7,8 +7,8 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_blending/vivid_light/vivid_light.collectionc
-render = /builtins/render/default.renderc
+main_collection = /examples_3d/normals/normals.collectionc
+render = /deffx/render/3d/main.renderc
 
 [display]
 width = 1600

@@ -1,0 +1,14 @@
+
+function init(self)
+	self.timer = 0
+
+end
+
+
+
+function update(self, dt)
+	self.timer = self.timer + dt
+	self.offset = (math.sin(self.timer))
+	go.set("/unitquad#unitquad", "progress.x", self.offset)
+	go.set("/unitquad1#unitquad", "progress.x", 1)
+end

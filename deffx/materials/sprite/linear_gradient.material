@@ -1,0 +1,225 @@
+name: "sprite"
+tags: "tile"
+vertex_program: "/builtins/materials/sprite.vp"
+fragment_program: "/deffx/materials/sprite/linear_gradient.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+fragment_constants {
+  name: "resolution"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1600.0
+    y: 800.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "gradient_start"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "gradient_stop"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.5
+    y: 0.5
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "number_of_colors"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 2.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "color_1"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+}
+fragment_constants {
+  name: "color_2"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.2
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+}
+fragment_constants {
+  name: "color_3"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "color_4"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "color_5"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "color_6"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "color_7"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "color_8"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "number_of_stops"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 3.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_1"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_2"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_3"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_4"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_5"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_6"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_7"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "stop_8"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+samplers {
+  name: "DIFFUSE_TEXTURE"
+  wrap_u: WRAP_MODE_REPEAT
+  wrap_v: WRAP_MODE_REPEAT
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+}

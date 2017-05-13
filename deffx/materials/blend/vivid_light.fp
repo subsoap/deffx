@@ -9,7 +9,7 @@ vec4 VividLight( vec4 blend, vec4 base, float fill )
 {
 	vec4 canvas;
 
-	blend.rgb = (mix( vec3(.5,.5,.5), blend.rgb, fill ) - 0.5) * 2.;
+	blend.rgb = (mix( vec3(.5,.5,.5), blend.rgb, fill ) - 0.5) * 2.0;
 	canvas.rgb = base.rgb + min(blend.rgb, 0.0);
 	canvas.rgb /= max(1.0-abs(blend.rgb), 0.000001) * base.a;
 	canvas = clamp( canvas, 0.0, 1.0 );
