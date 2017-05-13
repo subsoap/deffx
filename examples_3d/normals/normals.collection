@@ -203,7 +203,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/_assets/models/kocmoc.dae\\\"\\n"
+  "  data: \"mesh: \\\"/_assets/models/stanford-bunny.dae\\\"\\n"
   "material: \\\"/deffx/materials/model/normals.material\\\"\\n"
   "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
   "skeleton: \\\"\\\"\\n"
@@ -226,7 +226,7 @@ embedded_instances {
   ""
   position {
     x: 0.0
-    y: 0.0
+    y: 0.078
     z: 0.0
   }
   rotation {
@@ -236,8 +236,8 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.3
-    y: 0.3
-    z: 0.3
+    x: 0.04
+    y: 0.04
+    z: 0.04
   }
 }

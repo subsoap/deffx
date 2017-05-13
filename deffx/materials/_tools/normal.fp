@@ -9,4 +9,5 @@ uniform lowp sampler2D DIFFUSE_TEXTURE;
 void main() {
 
 	gl_FragColor = vec4(normalize(var_normal) * 0.5 + 0.5, 1.);
+	//gl_FragColor = vec4(var_normal, 1.0);
 }
