@@ -1,0 +1,37 @@
+function init(self)
+	-- Register this game object on the input stack so we get user input
+	msg.post(".", "acquire_input_focus")
+	self.timer = 0
+end
+
+function update(self,dt)
+	self.timer = self.timer + dt
+	--go.set("/go#model", "tint", vmath.vector4(math.sin(self.timer) + 1, math.cos(self.timer) + 1, math.sin(math.cos(self.timer)) + 1, 1))
+	--go.set("/go#model", "timer.x", self.timer)
+	go.set_position(vmath.vector3(0,0,math.abs(math.sin(self.timer * 0.01)) * -1))
+end
+
+function on_input(self, action_id, action)
+	-- React to touch and mouse presses
+	if action_id == hash("touch") then
+		-- Where did the user press/touch and how large is the screen?
+		local x = action.x
+		local y = action.y
+		local dx = action.dx
+		local dy = action.dy
+		local width = sys.get_config("display.width")
+		local height = sys.get_config("display.height")
+
+		local rot = go.get_rotation()
+
+		-- Translate the interaction position to rotations
+		-- on X and Y axis.
+		local xrot = vmath.quat_rotation_x(math.pi * 2 / height * dx)
+		local yrot = vmath.quat_rotation_y(math.pi * 2 / width * dy)
+		go.set_rotation(rot * xrot * yrot)
+		
+		-- Set the tint shader constant according to the
+		-- interaction position.
+		
+	end
+end

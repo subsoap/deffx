@@ -1,64 +1,6 @@
 name: "default"
 scale_along_z: 0
 embedded_instances {
-  id: "go"
-  data: "components {\n"
-  "  id: \"script\"\n"
-  "  component: \"/examples_3d/phong/phong.script\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "    w: 1.0\n"
-  "  }\n"
-  "}\n"
-  "embedded_components {\n"
-  "  id: \"model\"\n"
-  "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/_assets/models/rock01.dae\\\"\\n"
-  "material: \\\"/deffx/materials/model/phong.material\\\"\\n"
-  "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
-  "skeleton: \\\"\\\"\\n"
-  "animations: \\\"\\\"\\n"
-  "default_animation: \\\"\\\"\\n"
-  "name: \\\"unnamed\\\"\\n"
-  "\"\n"
-  "  position {\n"
-  "    x: 0.0\n"
-  "    y: 0.0\n"
-  "    z: 0.0\n"
-  "  }\n"
-  "  rotation {\n"
-  "    x: 0.0\n"
-  "    y: -0.05503859\n"
-  "    z: 0.0\n"
-  "    w: 0.99848425\n"
-  "  }\n"
-  "}\n"
-  ""
-  position {
-    x: 0.254
-    y: -0.017
-    z: 0.0
-  }
-  rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
-  }
-  scale3 {
-    x: 0.33341762
-    y: 0.33341762
-    z: 0.33341762
-  }
-}
-embedded_instances {
   id: "script"
   data: ""
   position {
@@ -118,7 +60,7 @@ embedded_instances {
   "pivot: PIVOT_NW\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"3d: Phong\\\"\\n"
+  "text: \\\"3d: Normals\\\"\\n"
   "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
   "material: \\\"/builtins/fonts/label.material\\\"\\n"
   "\"\n"
@@ -172,7 +114,7 @@ embedded_instances {
   "pivot: PIVOT_NW\\n"
   "blend_mode: BLEND_MODE_ALPHA\\n"
   "line_break: false\\n"
-  "text: \\\"3d: Phong\\\"\\n"
+  "text: \\\"3d: Normals\\\"\\n"
   "font: \\\"/builtins/fonts/system_font.font\\\"\\n"
   "material: \\\"/builtins/fonts/font.material\\\"\\n"
   "\"\n"
@@ -246,8 +188,8 @@ embedded_instances {
   data: "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/_assets/models/kocmoc.dae\\\"\\n"
-  "material: \\\"/deffx/materials/model/phong.material\\\"\\n"
+  "  data: \"mesh: \\\"/_assets/models/stanford-bunny.dae\\\"\\n"
+  "material: \\\"/deffx/materials/model/normals.material\\\"\\n"
   "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
   "skeleton: \\\"\\\"\\n"
   "animations: \\\"\\\"\\n"
@@ -268,7 +210,99 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -0.375
+    x: -0.035
+    y: 0.078
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.04
+    y: 0.04
+    z: 0.04
+  }
+}
+embedded_instances {
+  id: "camera"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/deffx/cameras/look_at.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+  }
+}
+embedded_instances {
+  id: "go"
+  data: "components {\n"
+  "  id: \"script\"\n"
+  "  component: \"/examples_3d/normals/normals.script\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/_assets/models/defold_logo.dae\\\"\\n"
+  "material: \\\"/deffx/materials/model/normals.material\\\"\\n"
+  "skeleton: \\\"\\\"\\n"
+  "animations: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "name: \\\"unnamed\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: -0.604
     y: 0.0
     z: 0.0
   }
@@ -282,5 +316,91 @@ embedded_instances {
     x: 0.25
     y: 0.25
     z: 0.25
+  }
+}
+embedded_instances {
+  id: "go2"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/deffx/materials/_tools/stanford-bunny.dae\\\"\\n"
+  "material: \\\"/deffx/materials/model/lambert.material\\\"\\n"
+  "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
+  "skeleton: \\\"\\\"\\n"
+  "animations: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "name: \\\"unnamed\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: -20.156\n"
+  "    y: -9.881\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 2.4749892E-15\n"
+  "    y: 0.27197742\n"
+  "    z: -1.6566981E-15\n"
+  "    w: 0.96230364\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 1.572
+    y: 0.893
+    z: -0.793
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.05
+    y: 0.05
+    z: 0.05
+  }
+}
+embedded_instances {
+  id: "go21"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/deffx/materials/_tools/stanford-bunny.dae\\\"\\n"
+  "material: \\\"/deffx/materials/model/phong.material\\\"\\n"
+  "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
+  "skeleton: \\\"\\\"\\n"
+  "animations: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "name: \\\"unnamed\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: -20.156\n"
+  "    y: -9.881\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 2.4749892E-15\n"
+  "    y: 0.27197742\n"
+  "    z: -1.6566981E-15\n"
+  "    w: 0.96230364\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 2.772
+    y: 0.893
+    z: -0.793
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 0.05
+    y: 0.05
+    z: 0.05
   }
 }

@@ -1,25 +1,105 @@
-function init(self)
+	--[[
 local eye = vmath.vector3(0, 0, 100)
 local look_at = vmath.vector3(0, 0, 0)
 local up = vmath.vector3(0, 1, 0)
 local view = vmath.matrix4_look_at(eye, look_at, up)
 render.set_view(view)
 local proj = vmath.matrix4_perspective(3.141592/2, 4/3, 1, 1000)	
+--]]
+
+--[[
+    -- create view and projection matrices
+    local cam_lookat = vmath.vector3(0.0,0.0,0.0)
+    local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)))
+    --local cam_pos = vmath.vector3(0.0,0.0,20.0) -- this moves the camera further away
+    local cam_up = vmath.vector3(0,1,0)
+    local view_mtx = vmath.matrix4_look_at(cam_pos, cam_lookat, cam_up)
+    local fov = (math.pi / 180.0) * 60.0 -- 60 degrees
+    local proj_mtx = vmath.matrix4_perspective(fov, render.get_window_width() / render.get_window_height(), 0.1, 100.0)
+    
+    -- set matrices
+    render.set_view(view_mtx)
+    render.set_projection(proj_mtx)
+
+--]]
+
+--[[
+
+This is a simple look at camera. You can set its position and change what it is looking at via message passing.
+
+It updates view matrix and view projection information to the screen_window_helper module so that a render script can use the data directly.
+
+--]]
+
+
+local screen_window_helper = require("deffx.utils.screen_window_helper")
+
+local function look_at(self, target)
+	screen_window_helper.view_matrix = vmath.matrix4_look_at(self.position,target,self.up)
+	screen_window_helper.projection_matrix = vmath.matrix4_perspective(self.fov, screen_window_helper.window_width / screen_window_helper.window_height, 0.1, 100.0)
+end
+
+
+local function demo(self)
+	
+end
+
+
+function init(self)
+	
+	self.timer = 0
+	
+	screen_window_helper.using_camera = true
+	
+	--[[
+	self.position = vmath.vector3(0,0,1)
+	self.target = vmath.vector3(0,0,0)
+	self.up = vmath.vector3(0,1,0)
+	self.fov = (math.pi / 180.0) * 60.0 -- 60 degrees
+	look_at(self,self.target)
+	--]]
+    -- create view and projection matrices
+
+	--[[ Demo - add extra comment to start of line to enable
+	self.timer = 0
+	self.demo = true
+	self.position.x = 1 * math.cos(self.timer)
+	self.position.y = 2 * math.sin(self.timer) + 10
+	--]]
 end
 
 function final(self)
-	-- Add finalization code here
-	-- Remove this function if not needed
+
 end
 
 function update(self, dt)
-	-- Add update code here
-	-- Remove this function if not needed
+	self.timer = self.timer + dt
+	demo(self)
+    local cam_lookat = vmath.vector3(0.0,0.0,0.0)
+    local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)))
+    cam_pos.x = 1 * math.cos(self.timer)
+    cam_pos.y = 2 * math.sin(self.timer)
+    --local cam_pos = vmath.vector3(0.0,0.0,20.0) -- this moves the camera further away
+    local cam_up = vmath.vector3(0,1,0)
+    screen_window_helper.view_matrix = vmath.matrix4_look_at(cam_pos, cam_lookat, cam_up)
+    local fov = (math.pi / 180.0) * 60.0 -- 60 degrees
+    screen_window_helper.projection_matrix = vmath.matrix4_perspective(fov, screen_window_helper.window_width / screen_window_helper.window_height, 0.1, 100.0)	
+	
+		
 end
 
 function on_message(self, message_id, message, sender)
-	-- Add message-handling code here
-	-- Remove this function if not needed
+	-- update all camera information
+    if message_id == hash("update_camera") then
+
+end
+
+    if message_id == hash("set_position") then
+
+    end
+    if message_id == hash("look_at") then
+
+    end
 end
 
 function on_input(self, action_id, action)
@@ -28,6 +108,5 @@ function on_input(self, action_id, action)
 end
 
 function on_reload(self)
-	-- Add reload-handling code here
-	-- Remove this function if not needed
+
 end
