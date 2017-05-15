@@ -1,1 +1,5 @@
 script: "/deffx/render/rendertarget/render_target.render_script"
+materials {
+  name: "post_pixelate"
+  material: "/deffx/materials/sprite/pixelate.material"
+}

@@ -1,3 +1,6 @@
+screen_window_helper = require("deffx.utils.screen_window_helper")
+
+
 local function update_unitquad_pred(self)
 
 	self.unitquad_exists = self.unitquad_exists or false
@@ -35,63 +38,92 @@ function init(self)
     self.gui_pred = render.predicate({"gui"})
     self.text_pred = render.predicate({"text"})
     self.particle_pred = render.predicate({"particle"})
-    
-    
-    -->
-    -- todo: detect window resize, remake this
+    self.threede_pred = render.predicate({"3d"})
     self.unitquad_pred = render.predicate({"unitquad"})
         	
-	update_unitquad_pred(self)
+	update_unitquad_pred(self)    
     
-	-->
-
-
     self.clear_color = vmath.vector4(0, 0, 0, 0)
     self.clear_color.x = sys.get_config("render.clear_color_red", 0)
     self.clear_color.y = sys.get_config("render.clear_color_green", 0)
     self.clear_color.z = sys.get_config("render.clear_color_blue", 0)
-    self.clear_color.w = sys.get_config("render.clear_color_alpha", 0)
-
-    self.view = vmath.matrix4()
+    self.clear_color.w = sys.get_config("render.clear_color_alpha", 0)    
+    
+    self.timer = 0
+    
+    self.view = vmath.matrix4()    
+    
 end
 
+local screen_window_helper = require("deffx.utils.screen_window_helper")
 
 function update(self)
-
+	
 	if (self.temp_window_width ~= render.get_window_width()) or (self.temp_window_height ~= render.get_window_height()) then
 		self.temp_window_width = render.get_window_width()
 		self.temp_window_height = render.get_window_height()		
 		print("updating unitquad predicate on window size update")
 		update_unitquad_pred(self)
-	end
+	end	
 	
+	self.timer = self.timer + 0.01
 
-    render.set_depth_mask(true)
-    render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
-
+	screen_window_helper.window_width = render.get_window_width()
+	screen_window_helper.window_height = render.get_window_height()
+    
+    ----------------------------------------------------------------------------------------
+    -- setup viewport and clear the screen
+    render.set_depth_mask(true)    
     render.set_viewport(0, 0, render.get_window_width(), render.get_window_height())
     render.set_view(self.view)
+    render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1, [render.BUFFER_STENCIL_BIT] = 0})
     
-    -->
+    -- setup state (we need to enable depth testing for 3D stuff)
+    render.enable_state(render.STATE_DEPTH_TEST)
+    render.set_depth_mask(true)
+    
     render.enable_render_target(self.effect_render_target)
     render.clear({[render.BUFFER_COLOR_BIT] = self.clear_color, [render.BUFFER_DEPTH_BIT] = 1})
-    render.enable_state(render.STATE_DEPTH_TEST)
-	render.disable_state(render.STATE_CULL_FACE)
     render.enable_state(render.STATE_BLEND)
     render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
-
-    render.set_depth_mask(false)
-    render.disable_state(render.STATE_DEPTH_TEST)
-    render.disable_state(render.STATE_STENCIL_TEST)
-    render.enable_state(render.STATE_BLEND)
     render.set_blend_func(render.BLEND_SRC_ALPHA, render.BLEND_ONE_MINUS_SRC_ALPHA)
-    render.disable_state(render.STATE_CULL_FACE)
-    
 
-    
     render.draw(self.tile_pred) -- draw tile/sprite predicate for testing
+    
+    --render.disable_render_target(self.effect_render_target)
+    
+    if (screen_window_helper.using_camera == true) then
+    	
+	    render.set_view(screen_window_helper.view_matrix)
+	    render.set_projection(screen_window_helper.projection_matrix)      	
+    	
+    else
+    
+	    -- create view and projection matrices
+	    local cam_lookat = vmath.vector3(0.0,0.0,0.0)
+	    local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)))
+	    --local cam_pos = vmath.vector3(0.0,0.0,20.0) -- this moves the camera further away
+	    local cam_up = vmath.vector3(0,1,0)
+	    local view_mtx = vmath.matrix4_look_at(cam_pos, cam_lookat, cam_up)
+	    local fov = (math.pi / 180.0) * 60.0 -- 60 degrees
+	    local proj_mtx = vmath.matrix4_perspective(fov, render.get_window_width() / render.get_window_height(), 0.1, 100.0)
+    
+	    -- set matrices
+	    render.set_view(view_mtx)
+	    render.set_projection(proj_mtx)    
+    
+    end
+    render.draw(self.threede_pred)    
+    
+    
+    
     render.disable_render_target(self.effect_render_target)
     
+    render.set_view(vmath.matrix4())
+	render.set_projection(vmath.matrix4())
+	self.constants = render.constant_buffer()	
+    
+
 
 	render.set_view(vmath.matrix4())
 	render.set_projection(vmath.matrix4())
@@ -102,7 +134,6 @@ function update(self)
 	render.enable_texture(0, self.effect_render_target, render.BUFFER_COLOR_BIT)
 	render.draw(self.unitquad_pred, self.constants) -- here we draw the render target to the unit quad
 	render.disable_texture(0, self.effect_render_target, render.BUFFER_COLOR_BIT)
-	-->
 	
     render.set_viewport(0, 0, render.get_window_width(), render.get_window_height())
     render.set_view(self.view)	
@@ -116,7 +147,7 @@ function update(self)
 
     render.set_projection(vmath.matrix4_orthographic(0, render.get_width(), 0, render.get_height(), -1, 1))
 
-    --render.draw(self.tile_pred) -- note that normal tile predicate is disabled
+    render.draw(self.tile_pred) -- note that normal tile predicate is disabled
     render.draw(self.particle_pred)
     render.draw_debug3d()
 
@@ -130,7 +161,9 @@ function update(self)
 
     render.set_depth_mask(false)
     render.draw_debug2d()
+
 end
+
 
 function on_message(self, message_id, message)
     if message_id == hash("clear_color") then
@@ -139,3 +172,4 @@ function on_message(self, message_id, message)
         self.view = message.view
     end
 end
+

@@ -40,7 +40,7 @@ function update(self)
     
     -- create view and projection matrices
     local cam_lookat = vmath.vector3(0.0,0.0,0.0)
-    local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)))
+    local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)) * 0.2)
     --local cam_pos = vmath.vector3(0.0,0.0,20.0) -- this moves the camera further away
     local cam_up = vmath.vector3(0,1,0)
     local view_mtx = vmath.matrix4_look_at(cam_pos, cam_lookat, cam_up)

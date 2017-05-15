@@ -76,7 +76,9 @@ function update(self, dt)
 	self.timer = self.timer + dt
 	demo(self)
     local cam_lookat = vmath.vector3(0.0,0.0,0.0)
+    screen_window_helper.camera_lookat = cam_lookat
     local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)))
+    screen_window_helper.camera_position = cam_pos
     cam_pos.x = 1 * math.cos(self.timer)
     cam_pos.y = 2 * math.sin(self.timer)
     --local cam_pos = vmath.vector3(0.0,0.0,20.0) -- this moves the camera further away

@@ -15,6 +15,8 @@ function update(self, dt)
 		go.set("/go#model", "lightPos4.x", self.delta)
 		go.set("/go#model", "lightPos4.y", self.delta)
 		go.set("/go#model", "lightPos4.z", self.delta)
+		go.set("/go1#model", "lightPos4.x", self.delta)
+	
 end
 
 function on_input(self, action_id, action)

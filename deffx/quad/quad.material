@@ -21,7 +21,7 @@ fragment_constants {
   }
 }
 samplers {
-  name: ""
+  name: "QUAD_TEXTURE"
   wrap_u: WRAP_MODE_CLAMP_TO_EDGE
   wrap_v: WRAP_MODE_CLAMP_TO_EDGE
   filter_min: FILTER_MODE_MIN_LINEAR

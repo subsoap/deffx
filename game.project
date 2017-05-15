@@ -7,8 +7,8 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_3d/normals_copy/normals.collectionc
-render = /deffx/render/3d_camera/main.renderc
+main_collection = /examples_3d/phong_rendertarget/phong.collectionc
+render = /deffx/render/3d_camera_rendertarget/main.renderc
 
 [display]
 width = 1600

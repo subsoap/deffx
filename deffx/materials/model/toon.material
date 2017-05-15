@@ -1,0 +1,98 @@
+name: "toon"
+tags: "model"
+tags: "3d"
+vertex_program: "/deffx/materials/model/toon.vp"
+fragment_program: "/deffx/materials/model/toon.fp"
+vertex_constants {
+  name: "view_proj"
+  type: CONSTANT_TYPE_VIEWPROJ
+}
+vertex_constants {
+  name: "world"
+  type: CONSTANT_TYPE_WORLD
+}
+vertex_constants {
+  name: "modelview"
+  type: CONSTANT_TYPE_WORLDVIEW
+}
+vertex_constants {
+  name: "normalMat"
+  type: CONSTANT_TYPE_NORMAL
+}
+vertex_constants {
+  name: "light_position"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 1.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "color_highlight"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.9
+    y: 0.6
+    z: 1.0
+    w: 1.0
+  }
+}
+fragment_constants {
+  name: "color_mid"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 0.2
+    y: 0.5
+    z: 0.5
+    w: 1.0
+  }
+}
+fragment_constants {
+  name: "color_shadow"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 1.0
+    z: 1.0
+    w: 1.0
+  }
+}
+fragment_constants {
+  name: "highlight_size"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 10.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "shadow_size"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+fragment_constants {
+  name: "outline_width"
+  type: CONSTANT_TYPE_USER
+  value {
+    x: 1.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+  }
+}
+samplers {
+  name: "DIFFUSE_TEXTURE"
+  wrap_u: WRAP_MODE_REPEAT
+  wrap_v: WRAP_MODE_REPEAT
+  filter_min: FILTER_MODE_MIN_LINEAR
+  filter_mag: FILTER_MODE_MAG_LINEAR
+}
