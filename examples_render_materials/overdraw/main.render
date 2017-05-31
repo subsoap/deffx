@@ -1,0 +1,5 @@
+script: "/examples_render_materials/overdraw/main.render_script"
+materials {
+  name: "overdraw"
+  material: "/deffx/materials/render_material/overdraw.material"
+}
