@@ -1,0 +1,21 @@
+go.property("frames", 8)
+go.property("delay", 4)
+go.property("tilemap", msg.url())
+
+function init(self)
+	self.current_delay=0
+	self.frame=0
+	self.tile_width=1/((self.frames-1)*2)
+end
+
+function update(self, dt)
+	self.current_delay=self.current_delay+1
+	if self.current_delay>self.delay then
+		self.frame=self.frame+1
+		if self.frame>self.frames-1 then
+			self.frame=0
+		end
+		tilemap.set_constant(self.tilemap, "offset", vmath.vector4(self.frame*self.tile_width,0,0,0))
+		self.current_delay=0
+	end
+end

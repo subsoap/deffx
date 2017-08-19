@@ -1,6 +1,7 @@
 varying mediump vec2 var_texcoord0;
 
 uniform lowp sampler2D DIFFUSE_TEXTURE;
+uniform lowp sampler2D DEPTH_BUFFER;
 uniform lowp vec4 options;
 uniform lowp vec4 resolution;
 
@@ -15,7 +16,9 @@ void main()
 	float u = floor( var_texcoord0.x / d ) * d;
 	d = ar / options.x;
 	float v = floor( var_texcoord0.y / d ) * d;
-	gl_FragColor = texture2D( DIFFUSE_TEXTURE, vec2( u, v ) );
+	gl_FragColor =  texture2D(DEPTH_BUFFER, vec2( u, v ));
+	gl_FragColor.a = texture2D( DIFFUSE_TEXTURE, vec2( u, v ) ).a;
+	//gl_FragColor = texture2D(DEPTH_BUFFER, var_texcoord0);
 
 
 }

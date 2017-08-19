@@ -7,12 +7,13 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-main_collection = /examples_3d/phong_rendertarget/phong.collectionc
-render = /deffx/render/3d_camera_rendertarget/main.renderc
+main_collection = /examples_sprites/normal_sprite_illumination/normal_sprite_illumination.collectionc
+render = /deffx/render/sprite_debug/default.renderc
 
 [display]
 width = 1600
 height = 800
+samples = 0
 
 [physics]
 scale = 0.02

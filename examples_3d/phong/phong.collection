@@ -35,9 +35,9 @@ embedded_instances {
   "  }\n"
   "  rotation {\n"
   "    x: 0.0\n"
-  "    y: -0.05503859\n"
+  "    y: 0.0\n"
   "    z: 0.0\n"
-  "    w: 0.99848425\n"
+  "    w: 1.0\n"
   "  }\n"
   "}\n"
   ""
@@ -282,5 +282,47 @@ embedded_instances {
     x: 0.25
     y: 0.25
     z: 0.25
+  }
+}
+embedded_instances {
+  id: "go2"
+  data: "embedded_components {\n"
+  "  id: \"model\"\n"
+  "  type: \"model\"\n"
+  "  data: \"mesh: \\\"/_assets/models/defold_logo.dae\\\"\\n"
+  "material: \\\"/builtins/materials/model.material\\\"\\n"
+  "skeleton: \\\"\\\"\\n"
+  "animations: \\\"\\\"\\n"
+  "default_animation: \\\"\\\"\\n"
+  "name: \\\"unnamed\\\"\\n"
+  "\"\n"
+  "  position {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "  }\n"
+  "  rotation {\n"
+  "    x: 0.0\n"
+  "    y: 0.0\n"
+  "    z: 0.0\n"
+  "    w: 1.0\n"
+  "  }\n"
+  "}\n"
+  ""
+  position {
+    x: 2.291
+    y: 0.0
+    z: 0.0
+  }
+  rotation {
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 1.0
+  }
+  scale3 {
+    x: 1.0
+    y: 1.0
+    z: 1.0
   }
 }

@@ -1,0 +1,25 @@
+function init(self)
+	go.animate(go.get_id(), "euler.z", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 3)
+	go.animate(go.get_id(), "euler.x", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 4)
+	go.animate(go.get_id(), "euler.y", go.PLAYBACK_LOOP_FORWARD, 360, go.EASING_LINEAR, 5)
+	msg.post(".", "acquire_input_focus")
+	self.alt_held_down = false
+end
+
+function on_input(self, action_id, action)
+    -- check which input we received
+    if action_id == hash("alt") then
+        self.alt_held_down = true
+        print("alt held down")
+    end    
+    if action_id == hash("alt") and action.released then
+        self.alt_held_down = false
+        print("releaseing alt")
+    end      
+    if action_id == hash("f4") and self.alt_held_down then
+        print("show confirm dialog to close game")
+    end
+    if action_id == hash("f4") and action.pressed then
+        print("f4")
+    end    
+end

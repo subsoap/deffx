@@ -1,0 +1,28 @@
+-- Hue goes between 0 to 1 with 0 and 1 wrapping around, hue shift range
+-- If saturation is 0 then it's unsaturated, 1 is normal satuation, 1+ more saturated
+-- If brightness is 0 then it's full black, 1 is normal, 1+ extra bright
+-- default values are hue 0, saturation 1, brightness 1
+-- hsb.x = hue, hsb.y = saturation, hsb.z = brightness
+-- http://geraldbakker.nl/psnumbers/hsb-explained.html
+
+function init(self)
+	self.timer = 0
+	-- Add initialization code here
+	-- Remove this function if not needed
+	
+end
+
+function update(self, dt)
+	self.timer = self.timer + dt
+	local offset = math.fmod(self.timer, 1)
+	--go.set("/public#turkey", "hsb.x", offset)
+	--go.set("/public#turkey", "hsb.y", math.sin(self.timer * 20))
+	go.set("/pixel_sprite_normal_hstrip#pixel_sprite_normal_hstrip", "light_direction_1.x",math.sin(self.timer))
+	go.set("/pixel_sprite_normal_hstrip#pixel_sprite_normal_hstrip", "light_direction_1.y",math.cos(self.timer ))
+	go.set("/pixel_sprite_normal_hstrip#pixel_sprite_normal_hstrip", "light_color_1.x", math.sin(self.timer))
+	--go.set("/public#japan", "hsb.x", offset)
+	--go.set("/defold#large", "hsb.x", offset)
+	--go.set("/defold#small", "hsb.x", offset)
+	-- Add update code here
+	-- Remove this function if not needed
+end

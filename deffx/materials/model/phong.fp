@@ -27,4 +27,7 @@ void main() {
 	}
 
 	gl_FragColor = vec4(lambertian * texture2D(DIFFUSE_TEXTURE, var_texcoord0) + specular * specColor, 1.0);
+
+
+
 }

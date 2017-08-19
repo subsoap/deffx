@@ -1,0 +1,48 @@
+
+go.property("color", vmath.vector4(1.0,1.0,1.0,1.0))
+go.property("size", 1.0)
+
+
+function init(self)
+	self.position = go.get_position()
+	self.color = go.get("#script", "color")
+	self.size = go.get("#script", "size")
+	go.set_scale(self.size)
+end
+
+function final(self)
+	-- Add finalization code here
+	-- Remove this function if not needed
+end
+
+function update(self, dt)
+	-- Add update code here
+	-- Remove this function if not needed
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("set_position") then
+		self.position = message.position
+	end
+	if message_id == hash("set_color") then
+		self.color = message.color
+	end
+	if message_id == hash("set_color") then
+		self.size = message.size
+	end	
+	if message_id == hash("update") then
+		self.position = message.position
+		self.color = message.color
+		self.size = size
+	end	
+end
+
+function on_input(self, action_id, action)
+	-- Add input-handling code here
+	-- Remove this function if not needed
+end
+
+function on_reload(self)
+	-- Add reload-handling code here
+	-- Remove this function if not needed
+end

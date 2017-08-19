@@ -5,14 +5,13 @@ uniform mediump mat4 normalMat;
 
 attribute mediump vec3 position;
 attribute mediump vec3 normal;
-attribute mediump vec3 tangent;
 attribute mediump vec2 texcoord0;
 
 varying mediump vec2 var_texcoord0;
 varying mediump vec3 var_position;
 varying mediump vec3 var_normal;
-varying mediump vec3 var_bitangent;
-varying mediump vec3 var_tangent;
+
+
 
 void main(){
 	gl_Position = view_proj * world * vec4(position.xyz, 1.0);
@@ -21,9 +20,5 @@ void main(){
     var_position = vec3(vertPos4) / vertPos4.w;
     var_normal = vec3(normalMat * vec4(normal, 0.0));
     var_texcoord0 = texcoord0;
-	var_tangent = tangent;
-	var_bitangent = cross(normal, tangent);
-
-
 
 }

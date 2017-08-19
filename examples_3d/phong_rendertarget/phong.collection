@@ -20,7 +20,7 @@ embedded_instances {
   "embedded_components {\n"
   "  id: \"model\"\n"
   "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/_assets/models/rock01.dae\\\"\\n"
+  "  data: \"mesh: \\\"/_assets/models/stanford-bunny.dae\\\"\\n"
   "material: \\\"/deffx/materials/model/phong.material\\\"\\n"
   "textures: \\\"/_assets/textures/public-domain/hokusai.jpg\\\"\\n"
   "skeleton: \\\"\\\"\\n"
@@ -35,14 +35,14 @@ embedded_instances {
   "  }\n"
   "  rotation {\n"
   "    x: 0.0\n"
-  "    y: -0.05503859\n"
+  "    y: 0.0\n"
   "    z: 0.0\n"
-  "    w: 0.99848425\n"
+  "    w: 1.0\n"
   "  }\n"
   "}\n"
   ""
   position {
-    x: 0.254
+    x: 0.573
     y: -0.017
     z: 0.0
   }
@@ -53,9 +53,9 @@ embedded_instances {
     w: 1.0
   }
   scale3 {
-    x: 0.33341762
-    y: 0.33341762
-    z: 0.33341762
+    x: 0.03
+    y: 0.03
+    z: 0.03
   }
 }
 embedded_instances {
@@ -244,10 +244,10 @@ embedded_instances {
 embedded_instances {
   id: "go1"
   data: "embedded_components {\n"
-  "  id: \"model\"\n"
+  "  id: \"model1\"\n"
   "  type: \"model\"\n"
-  "  data: \"mesh: \\\"/_assets/models/kocmoc.dae\\\"\\n"
-  "material: \\\"/deffx/materials/model/phong.material\\\"\\n"
+  "  data: \"mesh: \\\"/_assets/models/chinesedragon.dae\\\"\\n"
+  "material: \\\"/deffx/materials/model/facing_ratio.material\\\"\\n"
   "textures: \\\"/_assets/textures/public-domain/japan-nach-reisen-und-studien.png\\\"\\n"
   "skeleton: \\\"\\\"\\n"
   "animations: \\\"\\\"\\n"
@@ -268,20 +268,20 @@ embedded_instances {
   "}\n"
   ""
   position {
-    x: -0.375
-    y: 0.0
-    z: 0.0
+    x: 3.238
+    y: -1.615
+    z: -5.337
   }
   rotation {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 1.0
+    x: 0.104539745
+    y: 0.21683946
+    z: 0.027664788
+    w: 0.97019935
   }
   scale3 {
-    x: 0.25
-    y: 0.25
-    z: 0.25
+    x: 1.0
+    y: 1.0
+    z: 1.0
   }
 }
 embedded_instances {

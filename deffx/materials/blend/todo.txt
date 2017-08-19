@@ -1,0 +1,31 @@
+disolve
+
+darken
+multiply
+color burn
+linear burn
+darker color
+
+lighten
+screen
+color dodge
+linear dodge (add)
+lighter color
+
+overlay
+soft light
+hard light
+	vivid light
+linear light
+pin light
+hard mix
+
+difference
+exclusion
+subtract
+divide
+
+hue
+saturation
+color
+luminosity

@@ -1,0 +1,22 @@
+-- bun bun bun
+-- lil bun look at your tiny spoon-shaped ears
+-- aww bun brave little lawnmower bun
+
+function init(self)
+	self.go_position = go.get_position(".")
+	self.initial_y = 0.0
+	self.up = 0.1
+	self.g = 0.01
+	self.y = 0.0
+end
+
+
+function update(self, dt)
+	self.y = self.y - self.up * dt * 10
+	self.up = self.up - self.g * dt * 10
+	
+	if (self.y > self.initial_y) then self.up = 0.1 end
+	
+	self.go_position.y = math.abs(self.y)
+	go.set_position(self.go_position)
+end

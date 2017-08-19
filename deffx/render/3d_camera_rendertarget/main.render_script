@@ -19,6 +19,8 @@ local function update_unitquad_pred(self)
    	local depth_params = { format = render.FORMAT_DEPTH,
 	                       width = render.get_window_width(),
 	                       height = render.get_window_height(),
+	                       min_filter = render.FILTER_LINEAR,
+	                       mag_filter = render.FILTER_LINEAR,	                       
 	                       u_wrap = render.WRAP_CLAMP_TO_EDGE,
 	                       v_wrap = render.WRAP_CLAMP_TO_EDGE }    	
     
@@ -72,7 +74,7 @@ function update(self)
 	screen_window_helper.window_height = render.get_window_height()
     
     ----------------------------------------------------------------------------------------
-    -- setup viewport and clear the screen
+    -- setup viewport and clear the screen    
     render.set_depth_mask(true)    
     render.set_viewport(0, 0, render.get_window_width(), render.get_window_height())
     render.set_view(self.view)
@@ -90,6 +92,8 @@ function update(self)
 
     render.draw(self.tile_pred) -- draw tile/sprite predicate for testing
     
+
+    
     --render.disable_render_target(self.effect_render_target)
     
     if (screen_window_helper.using_camera == true) then
@@ -101,7 +105,7 @@ function update(self)
     
 	    -- create view and projection matrices
 	    local cam_lookat = vmath.vector3(0.0,0.0,0.0)
-	    local cam_pos = vmath.vector3(0.0,0.0,1.0 + math.abs(math.sin(self.timer)))
+	    local cam_pos = vmath.vector3(0.0,0.0,1.0) -- + math.abs(math.sin(self.timer)))
 	    --local cam_pos = vmath.vector3(0.0,0.0,20.0) -- this moves the camera further away
 	    local cam_up = vmath.vector3(0,1,0)
 	    local view_mtx = vmath.matrix4_look_at(cam_pos, cam_lookat, cam_up)
@@ -114,8 +118,7 @@ function update(self)
     
     end
     render.draw(self.threede_pred)    
-    
-    
+
     
     render.disable_render_target(self.effect_render_target)
     
@@ -131,9 +134,12 @@ function update(self)
 	self.constants = render.constant_buffer()
     --self.constants.tint = vmath.vector4(1,1,0,1)
 	
-	render.enable_texture(0, self.effect_render_target, render.BUFFER_COLOR_BIT)
+	render.enable_texture(0, self.effect_render_target, render.BUFFER_COLOR_BIT, render.BUFFER_DEPTH_BIT)
+	--render.enable_texture(1, self.effect_render_target, render.BUFFER_DEPTH_BIT)
 	render.draw(self.unitquad_pred, self.constants) -- here we draw the render target to the unit quad
-	render.disable_texture(0, self.effect_render_target, render.BUFFER_COLOR_BIT)
+	render.disable_texture(0, self.effect_render_target, render.BUFFER_COLOR_BIT,  render.BUFFER_DEPTH_BIT)
+	--render.disable_texture(1, self.effect_render_target, render.BUFFER_DEPTH_BIT)
+
 	
     render.set_viewport(0, 0, render.get_window_width(), render.get_window_height())
     render.set_view(self.view)	
