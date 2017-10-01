@@ -7,13 +7,8 @@ dependencies =
 game_binding = /input/game.input_bindingc
 
 [bootstrap]
-<<<<<<< HEAD
 main_collection = /examples_sprites/normal_sprite_illumination/normal_sprite_illumination.collectionc
 render = /deffx/render/sprite_debug/default.renderc
-=======
-main_collection = /examples_render_materials/overdraw/overdraw.collectionc
-render = /examples_render_materials/overdraw/main.renderc
->>>>>>> origin/master
 
 [display]
 width = 1600
