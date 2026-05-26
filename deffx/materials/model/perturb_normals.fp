@@ -67,6 +67,7 @@ void main() {
 		specular = pow(specAngle, 32.0);
 	}
 
-	gl_FragColor = vec4(lambertian * texture2D(DIFFUSE_TEXTURE, var_texcoord0) + specular * specColor, 1.0);
+	vec4 diffuse = texture2D(DIFFUSE_TEXTURE, var_texcoord0);
+	gl_FragColor = vec4(lambertian * diffuse.rgb + specular * specColor, diffuse.a);
 
 }

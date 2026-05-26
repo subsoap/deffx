@@ -22,11 +22,11 @@ void main()
 {
 	vec4 base = texture2D( DIFFUSE_TEXTURE, var_texcoord0 );
 	vec4 blend = texture2D( BLEND, var_texcoord0 ) * tint;
-	vec4 canvas = VividLight( blend, base, gl_Color.a );
+	vec4 canvas = VividLight( blend, base, tint.a );
 
 	canvas.rgb += (1.0 - blend.a) * base.rgb * base.a;
 	canvas.a += (1.0 - blend.a) * base.a;
-	blend.a *= gl_Color.a;
+	blend.a *= tint.a;
 	canvas.rgb += (1.0 - base.a) * blend.rgb * blend.a;
 	canvas.a += (1.0 - base.a) * blend.a;
 	canvas.rgb /= canvas.a;

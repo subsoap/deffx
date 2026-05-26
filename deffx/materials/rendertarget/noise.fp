@@ -40,7 +40,7 @@ float noise(vec2 st) {
 void main()
 {
     vec4 color = texture2D(DIFFUSE_TEXTURE, var_texcoord0);
-    float randomValue = noise(random(gl_FragCoord.xy * options.x));
+    float randomValue = noise(gl_FragCoord.xy * options.x);
     float diff = (randomValue - 0.5) * options.y;
 
 

@@ -19,8 +19,8 @@ function on_input(self, action_id, action)
 		local y = action.y
 		local dx = action.dx
 		local dy = action.dy
-		local width = sys.get_config("display.width")
-		local height = sys.get_config("display.height")
+		local width = sys.get_config_int("display.width")
+		local height = sys.get_config_int("display.height")
 
 		local rot = go.get_rotation()
 
