@@ -1,5 +1,5 @@
 script: "/examples_render_materials/overdraw/main.render_script"
-materials {
+render_resources {
   name: "overdraw"
-  material: "/deffx/materials/render_material/overdraw.material"
+  path: "/deffx/materials/render_material/overdraw.material"
 }

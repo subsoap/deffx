@@ -25,8 +25,6 @@ vertex_constants {
   value {
     x: 1.0
     y: 1.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -64,9 +62,6 @@ fragment_constants {
   type: CONSTANT_TYPE_USER
   value {
     x: 10.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -74,9 +69,6 @@ fragment_constants {
   type: CONSTANT_TYPE_USER
   value {
     x: 1.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -84,9 +76,6 @@ fragment_constants {
   type: CONSTANT_TYPE_USER
   value {
     x: 1.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 samplers {

@@ -5,5 +5,4 @@ images {
   image: "/_assets/textures/defold/defold-large.png"
 }
 margin: 20
-extrude_borders: 0
 inner_padding: 20

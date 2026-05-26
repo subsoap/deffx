@@ -12,18 +12,12 @@ fragment_constants {
   value {
     x: 1600.0
     y: 800.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "gradient_start"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -32,8 +26,6 @@ fragment_constants {
   value {
     x: 0.5
     y: 0.5
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -41,9 +33,6 @@ fragment_constants {
   type: CONSTANT_TYPE_USER
   value {
     x: 2.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -61,8 +50,6 @@ fragment_constants {
   type: CONSTANT_TYPE_USER
   value {
     x: 0.2
-    y: 0.0
-    z: 0.0
     w: 1.0
   }
 }
@@ -70,60 +57,36 @@ fragment_constants {
   name: "color_3"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "color_4"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "color_5"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "color_6"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "color_7"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "color_8"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -131,19 +94,12 @@ fragment_constants {
   type: CONSTANT_TYPE_USER
   value {
     x: 3.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "stop_1"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
@@ -152,68 +108,42 @@ fragment_constants {
   value {
     x: 1.0
     y: 1.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "stop_3"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "stop_4"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "stop_5"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "stop_6"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "stop_7"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 fragment_constants {
   name: "stop_8"
   type: CONSTANT_TYPE_USER
   value {
-    x: 0.0
-    y: 0.0
-    z: 0.0
-    w: 0.0
   }
 }
 samplers {
